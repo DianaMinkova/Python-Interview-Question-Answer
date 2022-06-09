@@ -1,0 +1,21 @@
+""" First distinction is Syntax"""
+my_list = [] - square brackets
+my_tuple = () - paranthesis
+
+
+""" Second distinction """
+""" The List is Mutable, the Tuple is not """
+
+my_list = ['apple', 'banana', 'orange']
+my_tuple = ('apple', 'banana', 'orange')
+
+"""The List can be change"""
+my_list[1] = 7
+print(my_list)
+>>> my_list = ['apple', 7, 'orange']
+
+"""The Tuple can't be change"""
+my_tuple[1] = 7
+print(my_tuple)
+>>> TypeError: 'tuple' object does not support item assignment
+
