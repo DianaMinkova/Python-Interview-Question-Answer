@@ -1,10 +1,9 @@
-""" First distinction is Syntax"""
+""" First distinction Syntax"""
 my_list = [] - square brackets
 my_tuple = () - paranthesis
 
 
-""" Second distinction """
-""" The List is Mutable, the Tuple is not """
+""" Second distinction: The List is Mutable, the Tuple is not """
 
 my_list = ['apple', 'banana', 'orange']
 my_tuple = ('apple', 'banana', 'orange')
@@ -19,3 +18,24 @@ my_tuple[1] = 7
 print(my_tuple)
 >>> TypeError: 'tuple' object does not support item assignment
 
+""" Third distinction: The List is Slow, the Tuple is Fast """
+
+from timeit import timeit
+
+"""List is slower because stored in two blocks of memory""
+print(timeit('x=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]', number=1000000)) 
+>>> 0.0642873999895528
+
+"""Tuple is stored in a single block of memory"""
+print(timeit('x=(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)', number=1000000))
+>>> 0.013214000035077333
+
+""" Fourth distinction Usability: In Dictionari: The List can't use as keys, the Tuple can create keys """
+
+dic_list = {['this', 'is']: 23,['is', 'a']: 2, ['next',  'distinction']: 3}
+print(dic_list)
+>>> TypeError: unhashable type: 'list'
+
+dic_tuple = {('this', 'is'): 23, ('is', 'a'): 2, ('next',  'distinction'): 3}
+print(dic_tuple)
+>>> {('this', 'is'): 23, ('is', 'a'): 2, ('next', 'distinction'): 3}
